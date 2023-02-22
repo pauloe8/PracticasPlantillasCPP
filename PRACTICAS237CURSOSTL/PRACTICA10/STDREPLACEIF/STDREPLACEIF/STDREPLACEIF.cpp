@@ -11,7 +11,8 @@ int main()
 
     // Define una función lambda que acepte un argumento y devuelva un valor booleano
     auto es_par = [](int n) { return n % 2 == 0; };
-    auto es_letra_e = [](const std::string& s) { return s == "e"; };
+    //auto es_letra_e = [](const std::string& s) { return s == "e"; };
+    auto es_letra_e = [](std::string& s) {for (auto ss : s) { if (ss == 'e') return true; } return false; };
 
     // Utiliza el algoritmo std::replace_if para reemplazar los elementos que cumplen con la condición
     std::replace_if(numeros.begin(), numeros.end(), es_par, 0);
